@@ -10,7 +10,7 @@
     <script src="./main.js" defer></script>
 </head>
 <body class="p-3 m-0 border-0 bd-example m-0 border-0">
-    <!-- <ul class="list"></ul> -->
+    <h1 class="text-center">Class 3: Javascript Foundations - Part 1</h1>
     <div class="container-sm">
         <div class="mt-4 p-5 bg-dark text-black rounded"
         style="--bs-bg-opacity: .12;">
@@ -18,36 +18,40 @@
                 <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Choose Exercise
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a onclick="ex1()" class="dropdown-item">Exercise 1</a></li>
-                    <li><a onclick="ex2()" class="dropdown-item">Exercise 2</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 3</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 4</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 5</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 6</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 7</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 8</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 9</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 10</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 11</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 12</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 13</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 14</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 15</a></li>
-                    <li><a href="#" class="dropdown-item">Exercise 16</a></li>
+                    <li><a onclick="exDisplay('exercise1'); ex1();" class="dropdown-item">Exercise 1</a></li>
+                    <li><a onclick="exDisplay('exercise2')" class="dropdown-item">Exercise 2</a></li>
+                    <li><a onclick="exDisplay('exercise3')" class="dropdown-item">Exercise 3</a></li>
+                    <li><a onclick="exDisplay('exercise4')" class="dropdown-item">Exercise 4</a></li>
+                    <li><a onclick="exDisplay('exercise5')" class="dropdown-item">Exercise 5</a></li>
+                    <li><a onclick="exDisplay('exercise6')" class="dropdown-item">Exercise 6</a></li>
+                    <li><a onclick="exDisplay('exercise7')" class="dropdown-item">Exercise 7</a></li>
+                    <li><a onclick="exDisplay('exercise8')" class="dropdown-item">Exercise 8</a></li>
+                    <li><a onclick="exDisplay('exercise9')" class="dropdown-item">Exercise 9</a></li>
+                    <li><a onclick="exDisplay('exercise10')" class="dropdown-item">Exercise 10</a></li>
+                    <li><a onclick="exDisplay('exercise11')" class="dropdown-item">Exercise 11</a></li>
+                    <li><a onclick="exDisplay('exercise12'); ex12();" class="dropdown-item">Exercise 12</a></li>
+                    <li><a onclick="exDisplay('exercise13')" class="dropdown-item">Exercise 13</a></li>
+                    <li><a onclick="exDisplay('exercise14')" class="dropdown-item">Exercise 14</a></li>
+                    <li><a onclick="exDisplay('exercise15')" class="dropdown-item">Exercise 15</a></li>
+                    <li><a onclick="exDisplay('exercise16')" class="dropdown-item">Exercise 16</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container exercise-div" style="display: none">
         <div class="mt-4 p-5 bg-dark text-black rounded"
         style="--bs-bg-opacity: .12;">
             <div class="container exercises">
                 <div class="exercise1" style="display: none">
-                    <h1 class="exercise1"></h1>
+                    <h4>Exercise 1</h4>
+                    <h5>Task: Display "Hello World!".</h5>
+                    <h1 class="exercise1 text-center mt-4"></h1>
                 </div>
                 <div class="exercise2" style="display: none">
-                    <form>
+                    <h4>Exercise 2</h4>
+                    <h5>Task: Display a string using an assigned variable "name".</h5>
+                    <form class="mt-4">
                         <div class="mb-3">
                             <label class="form-label">Please enter your name: </label>
                             <input class="form-control" id="exercise2Name">
@@ -55,21 +59,295 @@
                         <button type="button" class="btn btn-primary"
                         onclick="ex2Button()">Submit</button>
                     </form>
-
                     <div class="modal fade" id="exercise2Modal" tabindex="-1" aria-labelledby="exercise2Modal" aria-hidden="true">
                         <div class="modal-dialog">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="modal-content">
+                                <br>
+                                <div class="modal-body text-center ex2-modal-body"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
                             </div>
-                            <div class="modal-body ex2-modal-body"></div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                          </div>
                         </div>
-                      </div>
-                      
+                    </div>
+                </div>
+                <div class="exercise3" style="display: none;">
+                    <h4>Exercise 3</h4>
+                    <h5>Task: Calculate and display the area of a rectangle.</h5>
+                    <form class="mt-4">
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Length of the rectangle:</label>
+                                <input min="1" type="number" aria-label="Length" class="form-control" id="exercise3Length">
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Width of the rectangle:</label>
+                                <input min="1" type="number" aria-label="Width" class="form-control" id="exercise3Width">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <button type="button" class="btn btn-primary" style="margin-top: 31px;" onclick="ex3Button()">Calculate</button>
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Area of the rectangle:</label>
+                                <input type="number" class="form-control" id="exercise3Area" readonly>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="exercise4" style="display: none;">
+                    <h4>Exercise 4</h4>
+                    <h5>Task: Check if a number is even or odd.</h5>
+                    <form class="mt-4">
+                        <label class="form-label">Please enter a number:</label>
+                        <input min="1" type="number" class="form-control" id="exercise4Number">
+                        <div class="row mt-4">
+                            <div class="col">
+                                <button type="button" class="btn btn-primary"
+                                onclick="ex4Button()">Check if Even or Odd</button>
+                            </div>
+                            <div class="col">
+                                <label class="form-label mt-1">
+                                    <h4 id="exercise4Result"></h4>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="exercise5" style="display: none;">
+                    <h4>Exercise 5</h4>
+                    <h5>Task: Display the numbers 1-10 using a for loop.</h5>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary"
+                            onclick="ex5Button()">Let's Go!</button>
+                        </div>
+                        <div class="col">
+                            <label class="form-label mt-1">
+                                <h4 id="exercise5Result"></h4>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise6" style="display: none;">
+                    <h4>Exercise 6</h4>
+                    <h5>Task: Prompt user and display a personalized greeting.</h5>
+                    <form class="mt-4">
+                        <div class="mb-3">
+                            <label class="form-label">Please enter your name: </label>
+                            <input class="form-control" id="exercise6Name">
+                        </div>
+                        <button type="button" class="btn btn-primary"
+                        onclick="ex6Button()">Submit</button>
+                    </form>
+                    <div class="modal fade" id="exercise6Modal" tabindex="-1" aria-labelledby="exercise6Modal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <br>
+                                <div class="modal-body text-center ex6-modal-body"></div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise7" style="display: none;">
+                    <h4>Exercise 7</h4>
+                    <h5>Task: Calculate and display the factorial of a number.</h5>
+                    <form class="mt-4">
+                        <label class="form-label">Please enter a number:</label>
+                        <input min="1" type="number" class="form-control" id="exercise7Number">
+                        <div class="row mt-4">
+                            <div class="col">
+                                <button type="button" class="btn btn-primary"
+                                onclick="ex7Button()">Find Factorial</button>
+                            </div>
+                            <div class="col">
+                                <label class="form-label mt-1">
+                                    <h4 id="exercise7Result"></h4>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="exercise8" style="display: none;">
+                    <h4>Exercise 8</h4>
+                    <h5>Task: Prompt user for a year and determine if it is a leap year.</h5>
+                    <form class="mt-4">
+                        <label class="form-label">Please enter a number:</label>
+                        <input min="1" type="number" class="form-control" id="exercise8Number">
+                        <div class="row mt-4">
+                            <div class="col">
+                                <button type="button" class="btn btn-primary"
+                                onclick="ex8Button()">Check if Leap Year</button>
+                            </div>
+                            <div class="col">
+                                <label class="form-label mt-1">
+                                    <h4 id="exercise8Result"></h4>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="exercise9" style="display: none;">
+                    <h4>Exercise 9</h4>
+                    <h5>Task: Calculate and display the sum of all numbers 1-100 using a while loop.</h5>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <button type="button" class="btn btn-primary"
+                            onclick="ex9Button()">Let's Go!</button>
+                        </div>
+                        <div class="col">
+                            <label class="form-label mt-1">
+                                <h4 id="exercise9Result"></h4>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise10" style="display: none;">
+                    <h4>Exercise 10</h4>
+                    <h5>Task: Prompt user for 2 numbers and perform the four basic arithmetic operations on those numbers.</h5>
+                    <form class="mt-4">
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">First number:</label>
+                                <input min="1" type="number" aria-label="Number 1" class="form-control" id="exercise10Num1">
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Second number:</label>
+                                <input min="1" type="number" aria-label="Number 2" class="form-control" id="exercise10Num2">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <button type="button" class="btn btn-primary"
+                            onclick="ex10Button()">Math Time!</button>
+                            <label class="form-label mt-4">
+                                <div class="row text-center">
+                                    <div class="col">
+                                        <h4 id="exercise10AddResult"></h4>
+                                        <h4 id="exercise10SubResult"></h4>
+                                    </div>
+                                    <div class="col">
+                                        <h4 id="exercise10MultResult"></h4>
+                                        <h4 id="exercise10DivResult"></h4>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="exercise11" style="display: none;">
+                    <h4>Exercise 11</h4>
+                    <h5>Task: Create a variable for every Javascript Data Type</h5>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <h6>const varString = "string";</h6>
+                            <h6>const varNumber = 42;</h6>
+                            <h6>const varBool = true;</h6>
+                            <h6>const varNull = null;</h6>
+                        </div>
+                        <div class="col">
+                            <h6>let varUndefined = undefined;</h6>
+                            <h6>const varArray = [0, 1, 2, 3];</h6>
+                            <h6>let varNoDefaultValue;</h6>
+                        </div>
+                        <h6>const varObject = { objName: 'name', objType: 'object' };</h6>
+                    </div>
+                </div>
+                <div class="exercise12" style="display: none;">
+                    <h4>Exercise 12</h4>
+                    <h5>Task: Dynamically display a list of food items and prices using HTML & Javascript.</h5>
+                    <div class="row mt-4" style="font-weight: 500;">
+                        <div class="col">
+                            <ul class="list1"></ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list2"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise13" style="display: none;">
+                    <h4>Exercise 13</h4>
+                    <h5>Task: Take 2 numbers as arguments (num, length) and return an array of multiples of num intil the length is reached.</h5>
+                    <form class="mt-4">
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">num:</label>
+                                <input min="1" type="number" aria-label="Number 1" class="form-control" id="exercise13Num1">
+                            </div>
+                            <div class="col">
+                                <label class="form-label">length:</label>
+                                <input min="1" type="number" aria-label="Number 2" class="form-control" id="exercise13Num2">
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <button type="button" class="btn btn-primary"
+                            onclick="ex13Button()">Send It!</button>
+                            <label class="form-label mt-4 text-center">
+                                <h4 id="exercise13Result"></h4>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="exercise14" style="display: none;">
+                    <h4>Exercise 14</h4>
+                    <h5>Task: Determine and display whether a number is positive, negative or zero.</h5>
+                    <form class="mt-4">
+                        <label class="form-label">Please enter a number:</label>
+                        <input min="1" type="number" class="form-control" id="exercise14Number">
+                        <div class="row mt-4">
+                            <div class="col">
+                                <button type="button" class="btn btn-primary"
+                                onclick="ex14Button()">Check</button>
+                            </div>
+                            <div class="col">
+                                <label class="form-label mt-1">
+                                    <h4 id="exercise14Result"></h4>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="exercise15" style="display: none;">
+                    <h4>Exercise 15</h4>
+                    <h5>Task: Display the multiplication table of a number up to 10 using a for loop.</h5>
+                    <form class="mt-4">
+                        <div class="row mt-4">
+                            <label class="form-label">Please enter a number:</label>
+                            <input min="1" type="number" aria-label="Number 1" class="form-control" id="exercise15Num">
+                            <button type="button" class="btn btn-primary mt-4"
+                            onclick="ex15Button()">Math Time!</button>
+                        </div>
+                        <div class="row mt-4" style="font-weight: 500;">
+                            <div class="col">
+                                <ul class="list-unstyled tableList1"></ul>
+                            </div>
+                            <div class="col">
+                                <ul class="list-unstyled tableList2"></ul>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="exercise16" style="display: none;">
+                    <h4>Exercise 16</h4>
+                    <h5>Task: Create a function that checks if a given number is prime.</h5>
+                    <form class="mt-4">
+                        <label class="form-label">Please enter a number:</label>
+                        <input min="1" type="number" class="form-control" id="exercise16Number">
+                        <div class="row mt-4">
+                            <div class="col">
+                                <button type="button" class="btn btn-primary"
+                                onclick="ex16Button()">Check if Prime</button>
+                            </div>
+                            <div class="col">
+                                <label class="form-label mt-1">
+                                    <h4 id="exercise16Result"></h4>
+                                </label>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
