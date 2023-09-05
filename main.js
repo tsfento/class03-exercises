@@ -1,8 +1,6 @@
 let previousDiv = null;
 let exerciseDiv = document.querySelector('div.exercise-div');
 
-
-
 function exDisplay(num) {
     if (previousDiv != null) {
         previousDiv.setAttribute('style', 'display: none');
@@ -56,6 +54,8 @@ function ex4Button() {
 // Exercise 5
 function ex5Button() {
     let ex5Result = document.getElementById('exercise5Result');
+
+    ex5Result.textContent = '';
 
     for (let i = 1; i <= 10; i++) {
         ex5Result.textContent += `${i} `;
@@ -148,6 +148,11 @@ function ex12() {
     const list1 = document.querySelector('ul.list1');
     const list2 = document.querySelector('ul.list2');
 
+    while(list1.firstChild || list2.firstChild) {
+        list1.removeChild(list1.firstChild);
+        list2.removeChild(list2.firstChild);
+    }
+
     for (let i = 0; i < objList.length; i++) {
         let listItem1 = document.createElement('li');
         let listItem2 = document.createElement('li');
@@ -194,6 +199,11 @@ function ex15Button() {
     const multTableNum = document.getElementById('exercise15Num').value;
     const multList1 = document.querySelector('ul.tableList1');
     const multList2 = document.querySelector('ul.tableList2');
+
+    while(multList1.firstChild || multList2.firstChild) {
+        multList1.removeChild(multList1.firstChild);
+        multList2.removeChild(multList2.firstChild);
+    }
     
     for (let i = 1; i <= 10; i++) {
         let multItem = document.createElement('li');
