@@ -19,13 +19,17 @@ function ex1() {
 
 // Exercise 2
 function ex2Button() {
-    
-    const inputName = document.getElementById('exercise2Name');
+    let inputName2 = document.getElementById('exercise2Name').value;
     const modalText = document.querySelector('div.ex2-modal-body');
     const modal = new bootstrap.Modal(document.getElementById('exercise2Modal'));
-    modalText.innerHTML = `<h3>${inputName.value}</h3>`;
+
+    if(inputName2 == '') {
+        modalText.innerHTML = '<h3>All right, then. Keep your secrets.</h3>';
+    } else {
+        modalText.innerHTML = `<h3>${inputName2}</h3>`;
+    }
+
     modal.show();
-    
 }
 
 // Exercise 3
@@ -67,10 +71,16 @@ function ex5Button() {
 // Exercise 6
 function ex6Button() {
     
-    const inputName = document.getElementById('exercise6Name');
+    let inputName6 = document.getElementById('exercise6Name').value;
     const modalText = document.querySelector('div.ex6-modal-body');
     const modal = new bootstrap.Modal(document.getElementById('exercise6Modal'));
-    modalText.innerHTML = `<h3>Greetings, ${inputName.value}!</h3>`;
+
+    if(inputName6 == '') {
+        modalText.innerHTML = '<h3>All right, then. Keep your secrets.</h3>';
+    } else {
+        modalText.innerHTML = `<h3>Greetings, ${inputName6}!</h3>`;
+    }
+
     modal.show();
     
 }
@@ -129,6 +139,11 @@ function ex10Button() {
     let subResult = document.getElementById('exercise10SubResult');
     let multResult = document.getElementById('exercise10MultResult');
     let divResult = document.getElementById('exercise10DivResult');
+
+    if(num110 == '' || num210 == '') {
+        num110 = 0;
+        num210 = 0;
+    }
 
     addResult.textContent = `${num110} + ${num210} = ${+num110 + +num210}`;
     subResult.textContent = `${num110} - ${num210} = ${+num110 - +num210}`;
@@ -196,15 +211,19 @@ function ex14Button() {
 
 // Exercise 15
 function ex15Button() {
-    const multTableNum = document.getElementById('exercise15Num').value;
+    let multTableNum = document.getElementById('exercise15Num').value;
     const multList1 = document.querySelector('ul.tableList1');
     const multList2 = document.querySelector('ul.tableList2');
+
+    if(multTableNum == '') {
+        multTableNum = 0;
+    }
 
     while(multList1.firstChild || multList2.firstChild) {
         multList1.removeChild(multList1.firstChild);
         multList2.removeChild(multList2.firstChild);
     }
-    
+
     for (let i = 1; i <= 10; i++) {
         let multItem = document.createElement('li');
         let mult = multTableNum * i;
